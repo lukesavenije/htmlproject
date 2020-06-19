@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+      <title>voedingsprotecties</title>
+   </head>
+   <body>
+      <h3> <a href="#OPP">OPP</a>
+         <a href="#OCP">OCP</a>
+         <a href="#OTP">OTP</a>
+         <a href="#UVP">UVP</a>
+         <a href="#OVP">OVP</a>
+         <a href="#SCP">SCP</a>
+         <a href="#PWR_OK">PWR_OK</a> 
+      </h3>
+      <br>
+      <br>
+      <h4>
+         Er zijn veel dingen waar je naar moet kijken met het kopen van een voeding, en beveiligingen zijn een van de belangrijkste, zo niet het belangrijkste om naar te kijken. 
+         <br> 
+         Ze kunnen een voeding uitschakelen als hij te veel stroom trekt, een te hoog of te laag voltage houdt, kortsluiting of te hoge temperaturen intern heeft. 
+         <br>
+         Vandaag gaan we het hebben over wat ze doen, hoe ze technisch werken en hoe belangrijk elke is.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         Een paar gebruikte termen
+         </b> 
+      </h3>
+      <h4><br>
+         Protection IC= een "integrated circuit" dat de voeding in de gaten houdt. Hier vind je de meeste, en in een paar gevallen alle protecties.
+         <br> 
+         ATX Specificatie= een standaard van Intel met eisen en aanbevelingen met bijvoorbeeld beveiligingen, voltage regulatie en ripple.  
+         <br>
+         Shunt resistor= een resistor met een lage weerstand voor stroom om het te laten gaan naar een ander punt. hiermee kun je de hoeveelheid stroom meten.
+         <br>
+         Thermistor= een type resistor waar weerstand afhankelijk is van temperatuur.
+         <br> 
+      </h4>
+      <br> 
+      <h3> <b>
+         OPP (Over Power Protection) <a id=OPP></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         Over Power Protection of OPP is een beveiliging die de voeding zal uitschakelen wanneer te veel stroom wordt getrokken van de voeding. Dit is over het algemeen tussen de 110 en 140% of het wattage op het label. Dit is een protectie die werkt als een limiet, en werkt wanneer een bepaald punt is behaald, maar houdt de stroom niet actief in de gaten.
+         <br>
+         Het is over het algemeen terug te vinden in de protection IC en is een cruciale protectie. 
+         <br>
+         Het is verplicht in de ATX specificatie behalve als OCP ook aanwezig is.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         OCP (Over Current Protection) <a id=OCP></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         Over Current Protection of OCP heeft dezelfde reden, maar op een andere manier dan OPP. OCP zal over het algemeen sneller zijn, 
+         <br>
+         omdat het shunt resistors gebruikt om actief de hoeveelheid stroom te meten, en zal net als OPP de voeding uitschakelen als een bepaald punt is behaald. 
+         <br>
+         OCP op 12v vindt je over het algemeen enkel op multi-rail voedingen, omdat OPP een enkele rail zelf kan handelen zonder problemen.
+         <br>
+         Het is over het algemeen terug te vinden in de protection IC, samen met shunt resistors. Het is aangeraden, maar niet verplicht voor de ATX specificatie.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         OTP (Over Temperature Protection) <a id=OTP></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         Over Temperature Protection of OTP is een beveiliging die de voeding beschermt tegen overhitting, wat bijvoorbeeld kan gebeuren met een kapotte ventilator. het is over het algemeen in de protectie IC gezet, maar er zijn ook gevallen geweest waar het werd gebruikt vanuit de fan controller. De absolute limiet ervan zou onder de 200c moeten zijn, maar het ligt aan welk deel van de voeding hoe hoog het beste is.
+         <br>
+         Het was aangeraden tot versie 2.52, maar wordt in de momentele ATX specificatie verplicht
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         UVP (Under Voltage Protection) <a id=UVP></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         Under Voltage Protection of UVP is bedoeld om een voeding uit te schakelen als het voltage te laag wordt. Dit is niet alleen omdat veel componenten een stabiel voltage nodig hebben, zodat er minder correctie in de VRM nodig is, maar ook omdat OCP en OPP kunnen meten hoe veel stroom er doorheen gaan, maar niet hoe veel voltage. Als de voltage omlaag zou vallen, wordt de hoeveelheid amperage meer, waardoor kabels of connectors kunnen doorbranden.
+         <br>
+         Het is over het algemeen te vinden in de protection IC, en is aangeraden in de ATX specificatie. Ik vind persoonlijk dat dit een moderne voeding dit moet hebben.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         OVP (Over Voltage Protection) <a id=OVP></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         Over voltage Protection of OVP werkt in een vergelijkbare manier als UVP, maar dan de andere kant op. het controleert het voltage op een rail om te controleren dat het niet te hoog wordt en zal de voeding uitschakelen als het te hoog wordt.
+         <br>
+         Het is over het algemeen te vinden in de protection IC en is verplicht in de ATX specificatie.
+         <br>
+         <br>
+         SCP (Short Circuit Protection) <a id=SCP></a>
+         <br>
+         Short Circuit Protection of SCP meet de weerstand op elke rail, en zal uitschakelen wanneer dit minder dan 0.1 Ohms is. Dit gaat vaak in combinatie met OPP, OCP, OVP en UVP.
+         <br>
+         Het is meestal te vinden in de protection IC, en is verplicht in de ATX specificatie, met aparte circuits per rail.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         PWR_OK Signaal <a id=PWR_OK></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         The Power Good of PWR_OK signaal is een signaal om te laten zien dat de voeding genoeg stroom vasthoudt om de komende 17ms onder maximale lading te functioneren. deze vertraging moet onder de 500ms zin, maar de voorkeur volgens de ATX specificatie ligt onder de 250ms, maar moet meer dan 100ms zijn.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         Conclusie <a id=conclusie></a>
+         </b> 
+      </h3>
+      <h4> <br>
+         OPP is verplicht, wanneer de veel stroom wordt getrokken
+         <br>
+         OCP is aangeraden , voor hetzelfde idee
+         <br>
+         OTP is verplicht sinds de meest recente ATX specificatie om te voorkomen dat een voeding oververhit.
+         <br>
+         UVP is aangeraden door ATX, maar verplicht door mij, bedoeld wanneer voltage te laag wordt.
+         <br>
+         OVP is verplicht en wordt gebruikt wanneer een voeding te hoog op voltage gaat.
+         <br>
+         SCP is verplicht wanneer weerstand te weinig wordt.
+         <br>
+         PWR_OK is verplicht om aan te geven dat een voeding verder kan tot het volgende signaal.
+         <br>
+         <br> 
+      </h4>
+      <h3> <b>
+         Bronnen
+         </b> 
+      </h3>
+      <h4> <br>
+         <a href=https://en.wikipedia.org/wiki/Thermistor>https://en.wikipedia.org/wiki/Thermistor</a>
+         <br>
+         <a href=https://en.wikipedia.org/wiki/Shunt_(electrical)>https://en.wikipedia.org/wiki/Shunt_(electrical)</a>
+         <br>
+         <a href=https://www.tomshardware.com/reviews/power-supplies-101,4193.html>https://www.tomshardware.com/reviews/power-supplies-101,4193.html</a>
+         <br>
+         <a href=https://www.intel.com/content/dam/www/public/us/en/documents/guides/power-supply-design-guide-june.pdf>https://www.intel.com/content/dam/www/public/us/en/documents/guides/power-supply-design-guide-june.pdf</a>
+      </h4>
+   </body>
+</html>
